@@ -2,7 +2,6 @@ import Entry from './entry'
 
 function Entries({ entries }) {
   if (entries) {
-    console.log(entries)
     return (
       <table className="table-fixed border-collapse" >
       <tr>
