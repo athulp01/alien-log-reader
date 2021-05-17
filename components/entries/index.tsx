@@ -1,6 +1,6 @@
 import Entry from './entry'
 
-function Entries({ entries }) {
+function Entries({ entries, showOnlyNonIssued = false }) {
   if (entries) {
     return (
       <table className="table-fixed border-collapse" >
@@ -10,7 +10,7 @@ function Entries({ entries }) {
         <th className="w-64 border-2 border-black">Is Issued</th>
         <th className="w-64 border-2 border-r-2 border-black">Location</th>
       </tr>
-        {entries.map((e) => (
+        {entries.filter((e) => !(showOnlyNonIssued) || (showOnlyNonIssued && e.issued === 0)).map((e) => (
             <Entry time={e.time} tag={e.tag} location={e.location} issued={e.issued} />
         ))}
         </table>
