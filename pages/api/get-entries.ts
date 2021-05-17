@@ -5,7 +5,7 @@ const handler: NextApiHandler = async (_, res) => {
   try {
     const results = await query(`
       SELECT * FROM alienlog
-      ORDER BY time DESC
+      ORDER BY id DESC
       LIMIT 100
   `)
 
